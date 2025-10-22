@@ -17,8 +17,8 @@ const projects = [
     {
         id:2,
         title: "Mech2Door",
-        description: "A full-stack MERN application for managing products with CRUD operations, secure auth, and real-time updates.",
-        image: "/Projects/ProductPalace.png",
+        description: "A full-stack MERN web app connecting users with verified local mechanics, featuring real-time booking, admin verification, and secure authentication for trusted on-demand service.",
+        image: "/Projects/Mech2Door.png",
         tags: ["Node.js", "MongoDB","Express.js","PostMan","Tailwind CSS", "React"],
         url: "#",
         git: "#"
@@ -47,8 +47,8 @@ const projects = [
     {
         id:3,
         title: "HR Email Automation",
-        description: "A visually appealing and responsive restaurant landing page built using pure HTML and CSS.",
-        image: "/Projects/Grill.png",
+        description: "An AI-powered Node.js automation tool that uses Gemini AI to generate and send personalized HR outreach emails directly from Excel.",
+        image: "/Projects/EmailAutomation.png",
         tags: [ "Javascript", "Node.js", "Gen API", "Nodemailer", "xlsx"],
         url: "#",
         git: "https://github.com/abhicodes01/AI-HR-EmailAutomation"
