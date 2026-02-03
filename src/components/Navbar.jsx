@@ -30,7 +30,11 @@ export const Navbar = () => {
         <div className="container flex items-center justify-between md:justify-around">
             <a className="font-bold text-xl text-primary flex items-center" href="#home">
                 <span className="relative z-10">
+<<<<<<< HEAD
                     Portfolio
+=======
+                    <span className="text-glow text-foreground">Abhijeet</span> Portfolio
+>>>>>>> 2b416619f63e6abf3a92ab9a1dab03a5f19a6850
                 </span>
             </a>
 
