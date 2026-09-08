@@ -8,52 +8,36 @@ const projects = [
     id: 1,
     title: "AI Powered Cold Email Automation Platform",
     description:
-      "Developed an end-to-end Generative AI application that automatically generates personalized cold outreach emails from job postings using Llama 3.1 and modern LLM orchestration frameworks. The system extracts job requirements, retrieves relevant portfolio context using vector search, and produces tailored email content through a user-friendly web interface.",
+      "Built an end-to-end Generative AI application that analyzes job-posting content, extracts relevant requirements, retrieves contextual portfolio information through vector search and embeddings, and generates personalized outreach emails. Implemented LangChain orchestration, prompt engineering, retrieval-based generation, and an interactive Streamlit interface.",
     image: "/Projects/Softude.png",
-    tags: ["Python", "Lang Chain", "Vector DB", "Streamlit"],
-    git: "https://github.com/tarunreddy112233",
+    tags: ["Python", "LangChain", "Vector DB", "Embeddings", "RAG", "Streamlit"],
+    git: "https://github.com/tarunreddy112233/AI-Cold-Email-Generator",
   },
-
   {
     id: 2,
     title: "Secure Mental Health Support Platform with AI Moderation",
     description:
-      "Developed a secure, cross-platform Mental Health Support Application designed to assist individuals with personal health management, including medication tracking, appointment scheduling, and moderated peer-to-peer support. The application integrates a Large Language Model (LLM) for automated forum content moderation to ensure user safety while maintaining compliance with sensitive data-handling best practices.",
+      "Developed a cross-platform application incorporating LLM-based content moderation and NLP-oriented processing for peer-to-peer support forums. Designed workflows for medication tracking, appointment scheduling, and moderated user interactions with emphasis on secure data handling and reliable AI-assisted content classification and moderation.",
     image: "/Projects/Mech2Door.png",
-    tags: [
-      "Node.js",
-      "React Native",
-      "Axios API",
-      "MongoDB",
-    ],
-    git: "https://github.com/tarunreddy112233",
+    tags: ["Node.js", "React Native", "TypeScript", "Express.js", "MongoDB", "LLM", "NLP"],
+    git: "https://github.com/tarunreddy112233/MentalHealth-App-Backend",
   },
-
   {
     id: 3,
-    title: "Remainder Webapp",
+    title: "Serverless Attendance Application",
     description:
-      "Designed to help users manage their tasks, set reminders, and receive email notification about their upcoming events and view recurring tasks efficiently. The notifications can be customized according to the timings the user wants the notification and frequency of notification.",
-    image: "/Projects/VirtualR.png",
-    tags: ["Java", "Spring Boot", "MySQL", "Spring Boot Scheduler", "JPA", "Hibernate", "Thymeleaf"],
+      "Developed a serverless, event-driven application using AWS Lambda, Rekognition, Textract, S3, API Gateway, and DynamoDB to automate attendance processing through image-based recognition and document/text extraction. Designed asynchronous cloud-native workflows with infrastructure-as-code and CI/CD automation using AWS CDK, CloudFormation, GitHub Actions, and Jenkins.",
+    image: "/Projects/Jarvis.png",
+    tags: ["AWS Lambda", "Rekognition", "Textract", "S3", "DynamoDB", "API Gateway", "AWS CDK", "GitHub Actions"],
     git: "https://github.com/tarunreddy112233",
   },
-
   {
     id: 4,
-    title: "Serverless Attendance Application ",
+    title: "Remainder Webapp",
     description:
-      "Developed a serverless web app using AWS Lambda, S3, Rekognition, and Textract to automate classroom attendance by matching student-uploaded photos with live classroom images. Integrated API Gateway to connect the frontend (hosted on AWS Amplify) with backend services. Results were stored in DynamoDB for real-time tracking. Deployed infrastructure as code using AWS CDK, CloudFormation. Implemented CI/CD pipeline with GitHub Actions for automated deployment.",
-    image: "/Projects/Jarvis.png",
-    tags: [
-      "Python",
-      "Java",
-      "AWS DynamoDB",
-      "AWS Lambda",
-      "AWS Amplify",
-      "AWS Rekognition",
-      "AWS Textract",
-    ],
+      "Designed a task and reminder application using Java and Spring Boot, implementing scheduled and event-driven notification workflows for recurring tasks and time-based email notifications. Integrated cloud functions and job scheduling to support asynchronous processing and reliable delivery of user notifications.",
+    image: "/Projects/VirtualR.png",
+    tags: ["Java", "Spring Boot", "Thymeleaf", "MySQL", "Spring Boot Scheduler"],
     git: "https://github.com/tarunreddy112233",
   },
 ];
@@ -62,7 +46,7 @@ export const Projects = () => {
   useEffect(() => {
     AOS.init({
       duration: 1000,
-      once: false, // animation happens only once
+      once: false,
     });
   }, []);
 
@@ -73,35 +57,31 @@ export const Projects = () => {
           Featured <span className="text-primary">Projects</span>
         </h2>
 
-        <p className="txet-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          These projects demonstrate my experience in designing and developing scalable, production-ready applications, with a strong focus on clean architecture, maintainable code, and reliable system design.
+        <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
+          Selected projects demonstrating my experience across Generative AI, full-stack engineering, cloud-native systems, distributed processing, and intelligent application development.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
-          {projects.map((project, key) => (
-            <div
-              key={key}
-              className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover"
-            >
+          {projects.map((project) => (
+            <div key={project.id} className="group bg-card rounded-lg overflow-hidden shadow-xs card-hover">
               <div className="p-6">
-                <h3 className="text-xl text-left font-semibold mb-3">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground text-left text-sm mb-4">
-                  {project.description}
-                </p>
+                <h3 className="text-xl text-left font-semibold mb-3">{project.title}</h3>
+                <p className="text-muted-foreground text-left text-sm mb-4">{project.description}</p>
+
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.tags.map((tag) => (
-                    <span className="px-2 py-1 border text-xs rounded-full bg-secondary text-secondary-foreground ">
+                    <span key={tag} className="px-2 py-1 border text-xs rounded-full bg-secondary text-secondary-foreground">
                       {tag}
                     </span>
                   ))}
                 </div>
 
                 <div className="flex justify-between items-center">
-
                   <a
                     href={project.git}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`View ${project.title} on GitHub`}
                     className="text-foreground hover:text-primary transition-colors duration-300"
                   >
                     <Github />
@@ -115,10 +95,11 @@ export const Projects = () => {
         <div className="text-center mt-12">
           <a
             target="_blank"
+            rel="noopener noreferrer"
             href="https://github.com/tarunreddy112233"
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
           >
-            Check My Github <ArrowRight size={16} />
+            Check My GitHub <ArrowRight size={16} />
           </a>
         </div>
       </div>
