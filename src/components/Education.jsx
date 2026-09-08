@@ -6,20 +6,11 @@ const education = [
     {
         degree: "Master of Science in Computer Science",
         university: "University of Central Oklahoma",
-        location: "Edmond, OK",
-        period: "2024 - 2025",
+        location: "Oklahoma",
+        period: "Jan 2024 - Dec 2025",
         highlights: [
-            "Completed advanced coursework in Data Structures & Algorithms, Artificial Intelligence, Cloud Computing",
-            "Projects: AI Powered Cold Email Automation Platform, Reminder webapp with automated email notifications, Secure Mental Health Support Platform with AI Moderation, Automated Classroom Attendance system using AWS Rekognition"
-        ]
-    },
-    {
-        degree: "Bachelor of Technology in Computer Science",
-        university: "GuruNanak University",
-        location: "Hyderabad, India",
-        period: "2016 - 2020",
-        highlights: [
-            "Developed a full-stack e-commerce application for cosmetic products with a strong focus on transparency by clearly displaying detailed ingredient information for each product. The platform enables users to browse products, review ingredients, add items to a cart, and complete purchases using multiple payment options including COD and card payments."
+            "Completed a Master of Science in Computer Science with hands-on project work spanning Generative AI, cloud-native applications, distributed systems, and software engineering.",
+            "Selected projects included an AI Powered Cold Email Automation Platform, Secure Mental Health Support Platform with AI Moderation, Serverless Attendance Application, and Remainder Webapp."
         ]
     }
 ];
@@ -52,9 +43,7 @@ export const Education = () => {
                                     </p>
                                 </div>
                                 <div className="mt-2 md:mt-0">
-                                    <span className="text-muted-foreground font-medium">
-                                        {edu.period}
-                                    </span>
+                                    <span className="text-muted-foreground font-medium">{edu.period}</span>
                                 </div>
                             </div>
 
