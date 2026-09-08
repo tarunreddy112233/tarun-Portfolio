@@ -41,8 +41,12 @@ export const AboutMe = () => {
                             Get In Touch
                         </a>
 
-                        <a href="/Resume/Tarun_Reddy_Resume.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300">
-                            Resume
+                        <a
+                            href="/Resume/Lakkireddy_Tarun_Resume.pdf"
+                            download="Tarun_Reddy_Lakkireddy_Resume.pdf"
+                            className="px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors duration-300"
+                        >
+                            Download Resume
                         </a>
                     </div>
                 </div>
