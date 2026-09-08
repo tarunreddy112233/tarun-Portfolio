@@ -1,13 +1,11 @@
-import { Github, Instagram, Linkedin, Mail, MapPin, Send, Twitter } from "lucide-react"
+import { Github, Linkedin, Mail, MapPin, Phone, Send } from "lucide-react"
 import { cn } from "../lib/utils";
-import emailjs, { sendForm } from 'emailjs-com';
-import { useState } from "react";
+import emailjs from 'emailjs-com';
+import { useState, useEffect } from "react";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
 
 export const ContactMe = () => {
-
     const [formData, setFormData] = useState({
         name: "",
         email: "",
@@ -17,24 +15,24 @@ export const ContactMe = () => {
     const SERVICE_ID = "service_blgqkde";
     const TEMPLATE_ID = "template_55er18k";
     const PUBLIC_KEY = "skwFN3RZbI9tjpvUQ";
+
     const sendEmail = (e) => {
         e.preventDefault();
 
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
-            .then(
-                (result) => alert("Message sent successfully!"),
-                setFormData({ name: "", email: "", message: "" })
-            )
-            .catch(() => alert("Something went wrong "))
+            .then(() => {
+                alert("Message sent successfully!");
+                setFormData({ name: "", email: "", message: "" });
+            })
+            .catch(() => alert("Something went wrong"));
     };
 
     useEffect(() => {
         AOS.init({
             duration: 1000,
-            once: false, // animation happens only once
+            once: false,
         });
     }, []);
-
 
     return <section id="contact" className="py-24 px-4 relative bg-secondary/30">
         <div data-aos="fade-up" className="container mx-auto max-w-5xl">
@@ -43,7 +41,7 @@ export const ContactMe = () => {
             </h2>
 
             <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-                Have a project or idea? Let’s connect and bring it to life together.
+                Open to software engineering opportunities, technical collaborations, and conversations about building reliable cloud-native and AI-powered applications.
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -55,13 +53,22 @@ export const ContactMe = () => {
                             <div className="p-3 rounded-full bg-primary/10">
                                 <Mail className="h-6 w-6 text-primary" />
                             </div>
-
                             <div>
-                                <h4 className="font-medium text-left">Email :</h4>
-                                <a href="mailto:tarun.lakkireddy@gmail.com"
-                                    className="text-muted-foreground text-left hover:text-primary transition-colors duration-300"
-                                >
-                                    tarun.lakkireddy@gmail.com
+                                <h4 className="font-medium text-left">Email:</h4>
+                                <a href="mailto:tarunlakkireddy7@gmail.com" className="text-muted-foreground text-left hover:text-primary transition-colors duration-300">
+                                    tarunlakkireddy7@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <div className="flex items-start space-x-4">
+                            <div className="p-3 rounded-full bg-primary/10">
+                                <Phone className="h-6 w-6 text-primary" />
+                            </div>
+                            <div>
+                                <h4 className="font-medium text-left">Phone:</h4>
+                                <a href="tel:+15722057781" className="text-muted-foreground text-left hover:text-primary transition-colors duration-300">
+                                    +1 (572) 205-7781
                                 </a>
                             </div>
                         </div>
@@ -70,14 +77,10 @@ export const ContactMe = () => {
                             <div className="p-3 rounded-full bg-primary/10">
                                 <Linkedin className="h-6 w-6 text-primary" />
                             </div>
-
                             <div>
-                                <h4 className="font-medium text-left">LinkedIn :</h4>
-                                <a href="https://www.linkedin.com/in/tarun-reddy-lakkireddy-b3169b18b/"
-                                    target="_blank"
-                                    className="text-muted-foreground text-left hover:text-primary transition-colors duration-300"
-                                >
-                                    Tarun-Reddy-Lakkireddy
+                                <h4 className="font-medium text-left">LinkedIn:</h4>
+                                <a href="https://www.linkedin.com/in/tarun-reddy-lakkireddy-b3169b18b/" target="_blank" rel="noopener noreferrer" className="text-muted-foreground text-left hover:text-primary transition-colors duration-300">
+                                    Tarun Reddy Lakkireddy
                                 </a>
                             </div>
                         </div>
@@ -86,14 +89,9 @@ export const ContactMe = () => {
                             <div className="p-3 rounded-full bg-primary/10">
                                 <MapPin className="h-6 w-6 text-primary" />
                             </div>
-
                             <div>
-                                <h4 className="font-medium text-left">Location :</h4>
-                                <a
-                                    className="text-muted-foreground text-left"
-                                >
-                                    Edmond, OK, USA
-                                </a>
+                                <h4 className="font-medium text-left">Location:</h4>
+                                <span className="text-muted-foreground text-left">Oklahoma City, OK – 73034, USA</span>
                             </div>
                         </div>
                     </div>
@@ -101,12 +99,10 @@ export const ContactMe = () => {
                     <div className="pt-8">
                         <h4 className="font-medium mb-4">Connect With Me</h4>
                         <div className="flex space-x-4 justify-center">
-
-                            <a className="hover:text-primary" target="_blank" href="https://www.linkedin.com/in/tarun-reddy-lakkireddy-b3169b18b/">
+                            <a className="hover:text-primary" target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/tarun-reddy-lakkireddy-b3169b18b/" aria-label="LinkedIn">
                                 <Linkedin />
                             </a>
-
-                            <a className="hover:text-primary" target="_blank" href="https://github.com/tarunreddy112233">
+                            <a className="hover:text-primary" target="_blank" rel="noopener noreferrer" href="https://github.com/tarunreddy112233" aria-label="GitHub">
                                 <Github />
                             </a>
                         </div>
@@ -119,26 +115,17 @@ export const ContactMe = () => {
                     <form onSubmit={sendEmail} className="space-y-6">
                         <div>
                             <label className="block text-sm font-medium mb-2 text-left" htmlFor="name">Your Name</label>
-                            <input type="text" id="name" name="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required
-                                className=" w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                                placeholder="Tarun..."
-                            />
+                            <input type="text" id="name" name="name" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} required className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary" placeholder="Your name" />
                         </div>
 
                         <div>
                             <label className="block text-sm font-medium mb-2 text-left" htmlFor="email">Your Email</label>
-                            <input type="email" id="email" name="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required
-                                className=" w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                                placeholder="xyz@gmail.com"
-                            />
+                            <input type="email" id="email" name="email" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} required className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary" placeholder="you@example.com" />
                         </div>
 
                         <div>
                             <label className="block text-sm font-medium mb-2 text-left" htmlFor="message">Your Message</label>
-                            <textarea id="message" name="message" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} required
-                                className=" w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
-                                placeholder="Hello! I'd like to talk about Project Details / Regarding Job / Internships ... "
-                            />
+                            <textarea id="message" name="message" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })} required className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none" placeholder="Hello! I'd like to connect about a software engineering opportunity..." />
                         </div>
 
                         <button type="submit" className={cn("cosmic-button w-full flex items-center justify-center gap-2")}>
@@ -146,7 +133,6 @@ export const ContactMe = () => {
                         </button>
                     </form>
                 </div>
-
             </div>
         </div>
     </section>
