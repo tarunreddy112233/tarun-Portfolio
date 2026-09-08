@@ -4,23 +4,77 @@ import { useEffect } from 'react';
 
 const achievements = [
     {
-        role: "Software Engineer",
-        company: "Ojas Innovative Technologies",
-        location: "Hyderabad, India",
-        period: "Jan 2021 - Dec 2023",
+        role: "Senior Software Engineer",
+        company: "PNC Financial",
+        location: "USA",
+        period: "Feb 2026 - Present",
         responsibilities: [
-            "Developed backend APIs using Java, Spring Boot, Hibernate for a mobile banking application handling 1000+ requests per minute for various modules like FD/RD, Fund Transfer, Demat",
-            "Designed and implemented a centralized error tracking and logging framework using structured logs for critical user flows such as Login and Registration reducing production issue resolution by 40%.",
-            "Designed and exposed scalable RESTful APIs for multiple banking modules using Spring Boot and MVC architecture",
-            "Built a dynamic multilingual feature enabling users to switch app language at runtime",
-            "Actively participated in code reviews and design discussions and supported production release through real-time monitoring and detailed log analysis, resulting in a 25% reduction in post-release defects.",
-            "Collaborated with cross-functional teams to interpret and integrate new initiatives, documenting their software impacts effectively.",
-            "Implemented agile methodologies through daily scrums to manage project workflows and adapt to evolving features"
+            "Developed scalable Java, Spring Boot, and React.js applications and REST APIs supporting customer onboarding, account management, payments, transaction processing, and secure self-service workflows across enterprise banking platforms.",
+            "Engineered distributed microservices for payment processing, account validation, transaction orchestration, reconciliation, fraud screening, and audit reporting, applying scalable system design and reliability patterns to support high-volume business operations.",
+            "Built event-driven and streaming architectures using Apache Kafka and RabbitMQ for real-time transaction processing, payment notifications, fraud alerts, and asynchronous communication across distributed services.",
+            "Applied secure API and application architecture using Spring Security, OAuth 2.0, JWT, RBAC, SSL/TLS, and API gateways to protect customer data and financial transactions across distributed enterprise systems.",
+            "Tuned application performance through Redis, SQL optimization, connection pooling, and database tuning across Oracle and PostgreSQL, improving API response times and transaction throughput during peak workloads.",
+            "Automated software delivery through Git, Jenkins, Docker, Kubernetes, Maven, and SonarQube, integrating automated testing, code-quality validation, build processes, and deployment workflows across development, QA, and production environments.",
+            "Deployed cloud-native distributed applications on AWS EC2, RDS, Lambda, S3, IAM, API Gateway, and CloudWatch, supporting scalable services, high availability, operational monitoring, and production reliability.",
+            "Established centralized logging, monitoring, and observability using ELK Stack, Prometheus, Grafana, Splunk, and AppDynamics, enabling production troubleshooting, service-level monitoring, transaction traceability, and faster incident resolution."
         ],
         technologies: [
-            "Java", "JavaScript", "web development", "Git", "HTML", "CSS", "React", "Typescript",
-            "Spring MVC", "Spring Boot", "Maven", "Docker", "Helm charts", "Kubernetes",
-            "MySQL", "Oracle SQL", "Azure AKS", "Agile methodologies", "RESTful APIs"
+            "Java", "Python", "Spring Boot", "Spring Security", "React.js", "REST APIs", "Microservices", "Kafka", "RabbitMQ", "Redis",
+            "OAuth 2.0", "JWT", "RBAC", "PostgreSQL", "Oracle", "AWS", "Docker", "Kubernetes", "Jenkins", "Maven", "SonarQube"
+        ]
+    },
+    {
+        role: "Software Developer Intern",
+        company: "Coforge",
+        location: "USA",
+        period: "May 2025 - Nov 2025",
+        responsibilities: [
+            "Assisted in developing an enterprise HRMS and Payroll Management System using Java, Spring Boot, Hibernate, and REST APIs, supporting employee onboarding, attendance, payroll processing, leave management, timesheets, and performance workflows.",
+            "Developed React.js and JavaScript frontend modules with MySQL-backed services, implementing employee self-service capabilities and integrating REST APIs with backend business logic and enterprise application workflows.",
+            "Partnered with senior developers in Agile/Scrum SDLC to resolve application defects, optimize SQL queries, support Git/Jenkins CI/CD workflows, perform unit testing, participate in code reviews, and maintain technical documentation for reliable feature delivery."
+        ],
+        technologies: [
+            "Java", "Spring Boot", "Hibernate", "REST APIs", "React.js", "JavaScript", "MySQL", "Git", "Jenkins", "JUnit", "Agile/Scrum"
+        ]
+    },
+    {
+        role: "Software Engineer",
+        company: "Ojas Innovative Technologies",
+        location: "India",
+        period: "Jan 2021 - Dec 2023",
+        responsibilities: [
+            "Developed enterprise financial management applications using Java, Spring Boot, Hibernate, React.js, and REST APIs, supporting billing, payment processing, account management, invoicing, reconciliation, and financial reporting across high-volume business operations.",
+            "Architected scalable RESTful APIs and Spring Boot microservices for payment workflows, invoice generation, customer account services, transaction processing, and financial settlement, applying distributed system and service-oriented design principles.",
+            "Implemented event-driven processing with Apache Kafka and RabbitMQ for real-time payment notifications, transaction validation, reconciliation events, and asynchronous financial workflows, improving service scalability and processing reliability.",
+            "Delivered responsive React.js dashboards using JavaScript, TypeScript, HTML5, and CSS3, providing real-time visibility into payment status, account balances, transaction history, and operational KPIs for business users.",
+            "Improved PostgreSQL and MySQL performance through query tuning, indexing, transaction optimization, and data-access improvements, strengthening reporting performance and high-volume transaction processing.",
+            "Integrated Redis for caching and session management to accelerate frequently accessed data retrieval, reduce database load, and improve application responsiveness during high-traffic processing periods.",
+            "Utilized AWS EC2, S3, Lambda, IAM, SQS, SNS, and API Gateway to implement scalable cloud-native services supporting payment integrations, document processing, asynchronous workflows, and distributed application communication.",
+            "Streamlined build, testing, and deployment processes using Git, Jenkins, Docker, and Kubernetes, establishing repeatable CI/CD workflows and consistent application delivery across development, QA, and production environments.",
+            "Worked with business analysts, product owners, QA engineers, DevOps teams, and finance stakeholders in an Agile/Scrum environment to troubleshoot production issues, conduct code reviews, improve system reliability, and deliver enhancements to distributed financial applications."
+        ],
+        technologies: [
+            "Java", "Spring Boot", "Hibernate", "React.js", "TypeScript", "REST APIs", "Kafka", "RabbitMQ", "Redis", "PostgreSQL", "MySQL",
+            "AWS", "SQS", "SNS", "API Gateway", "Docker", "Kubernetes", "Jenkins", "Git", "Agile/Scrum"
+        ]
+    },
+    {
+        role: "Software Developer",
+        company: "Lumen Technologies",
+        location: "India",
+        period: "Mar 2019 - Dec 2020",
+        responsibilities: [
+            "Developed Java-based web applications and RESTful APIs supporting a large-scale shipping and logistics platform, enabling shipment tracking, order processing, warehouse operations, and customer-facing logistics services.",
+            "Built responsive React.js interfaces using JavaScript, TypeScript, HTML5, and CSS3, delivering operational dashboards, shipment status capabilities, and user-facing workflow enhancements.",
+            "Implemented backend services and business logic using Java, Spring MVC, Servlets, and Hibernate, supporting shipment processing, inventory management, order fulfillment, and integrations with enterprise logistics systems.",
+            "Optimized PostgreSQL and MySQL queries, stored procedures, and database operations to improve application performance, logistics reporting, shipment analytics, and backend data processing.",
+            "Troubleshot production application issues, performed root-cause analysis, and implemented corrective fixes to maintain availability and reliable processing across the logistics platform.",
+            "Supported AWS-based application deployment using EC2 and S3, assisting with environment configuration, application hosting, deployment activities, and production maintenance.",
+            "Coordinated with business analysts, QA engineers, UI/UX designers, and Agile development teams using Git and Scrum practices to deliver logistics platform enhancements and backend services through scheduled releases.",
+            "Maintained technical documentation covering application architecture, REST API interfaces, deployment procedures, business workflows, and production support processes to improve knowledge sharing and operational continuity."
+        ],
+        technologies: [
+            "Java", "Spring MVC", "Servlets", "Hibernate", "REST APIs", "React.js", "JavaScript", "TypeScript", "PostgreSQL", "MySQL", "AWS EC2", "AWS S3", "Git", "Scrum"
         ]
     }
 ];
@@ -53,9 +107,7 @@ export const Experience = () => {
                                     </p>
                                 </div>
                                 <div className="mt-2 md:mt-0">
-                                    <span className="text-muted-foreground font-medium">
-                                        {job.period}
-                                    </span>
+                                    <span className="text-muted-foreground font-medium">{job.period}</span>
                                 </div>
                             </div>
 
